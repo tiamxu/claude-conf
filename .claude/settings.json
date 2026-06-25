@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/claude-code-settings.json",
+//   "model": "sonnet",
+  "language": "chinese",
+  "alwaysThinkingEnabled": true,
+  "outputStyle": "Explanatory",
+  "autoUpdatesChannel": "stable",
+  "showTurnDuration": true,
+  "respectGitignore": true,
+  "cleanupPeriodDays": 30,
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      
+      "Bash(go vet:*)",
+      "Bash(go doc:*)",
+      "Bash(go version:*)",
+      "Bash(go list:*)",
+      "Bash(go env:*)",
+      "Bash(go build:*)",
+      "Bash(go test:*)",
+      "Bash(go mod:*)",
+      "Bash(gofmt -l:*)",
+
+      "Bash(npm run lint)",
+      "Bash(npm run test *)",
+      "Bash(git status)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(~/.ssh/*)",
+      "Bash(rm -rf *)",
+      "Bash(rm -rf ~*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(dropdb *)"
+    ]
+  },
+
+  "env": {
+    "API_TIMEOUT_MS": "1200000",
+    "BASH_DEFAULT_TIMEOUT_MS": "300000"
+  }
+}
